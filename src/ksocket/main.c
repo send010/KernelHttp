@@ -26,7 +26,7 @@ DriverEntry(
   {
     return Status;
   }
-  //char url[500] = "http://user.bsradar.cc/config/user/GetUserInfo";
+  //char url[500] = "http://post/config/user/GetUserInfo";
   //char data[1024] = {0};
   //Status = HttpGet(data, url);
   //if (!NT_SUCCESS(Status))
@@ -38,10 +38,10 @@ DriverEntry(
   //DebuggerPrint("[BuMo] Data = %s  \r\n", data);
 
 
-  char posturl[500] = "http://user.bsradar.cc/user/ProjectUser/login";
+  char posturl[500] = "http://baidu.com/user/ProjectUser/login";
 
   char postdata[1024] = { 0 };
-  char requestData[1024] ="{\"email\":\"admin@bsradar.cc\",\"password\":\"1164185642\",\"projectId\":\"1\"}";
+  char requestData[1024] ="{\"email\":\"test\",\"password\":\"test\",\"projectId\":\"1\"}";
   Status = HttpPost(postdata, posturl, requestData,"application/json;charset=UTF-8");
   if (!NT_SUCCESS(Status))
   {
