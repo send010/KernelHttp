@@ -12,11 +12,6 @@ KHttpInit(
 );
 
 
-NTSTATUS
-NTAPI
-HttpPost(
-  VOID
-);
-
-
 NTSTATUS NTAPI HttpGet(_Out_ char* recv_buffer, _In_ char* url);
+
+NTSTATUS NTAPI HttpPost(_Out_ char* recv_buffer, _In_ char* url, _In_ char* data, _In_ char* contextType);

@@ -16,7 +16,6 @@ DriverEntry(
   NTSTATUS Status;
 
 
-
   //
   // Initialize KSOCKET.
   //
@@ -27,16 +26,33 @@ DriverEntry(
   {
     return Status;
   }
-  char url[500] = "http://user.bsradar.cc/config/user/GetUserInfo";
-  char data[1024] = {0};
-  Status = HttpGet(data, url);
+  //char url[500] = "http://user.bsradar.cc/config/user/GetUserInfo";
+  //char data[1024] = {0};
+  //Status = HttpGet(data, url);
+  //if (!NT_SUCCESS(Status))
+  //{
+  //  DebuggerPrint("[BuMo] Get Error %d  \r\n", Status);
+  //  return STATUS_UNSUCCESSFUL;
+  //}
+
+  //DebuggerPrint("[BuMo] Data = %s  \r\n", data);
+
+
+  char posturl[500] = "http://user.bsradar.cc/user/ProjectUser/login";
+
+  char postdata[1024] = { 0 };
+  char requestData[1024] ="{\"email\":\"admin@bsradar.cc\",\"password\":\"1164185642\",\"projectId\":\"1\"}";
+  Status = HttpPost(postdata, posturl, requestData,"application/json;charset=UTF-8");
   if (!NT_SUCCESS(Status))
   {
-    DebuggerPrint("[BuMo] Get Error %d  \r\n", Status);
+    DebuggerPrint("[BuMo] Post Error %d  \r\n", Status);
     return STATUS_UNSUCCESSFUL;
   }
 
-  DebuggerPrint("[BuMo] Data = %s  \r\n", data);
+  DebuggerPrint("[BuMo] Post Data = %s  \r\n", postdata);
+
+
+
 
   KsDestroy();
 
