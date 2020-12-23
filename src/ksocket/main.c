@@ -26,7 +26,7 @@ DriverEntry(
   {
     return Status;
   }
-  //char url[500] = "http://post/config/user/GetUserInfo";
+  //char url[500] = "hhttp://baidu.com/Info";
   //char data[1024] = {0};
   //Status = HttpGet(data, url);
   //if (!NT_SUCCESS(Status))
@@ -38,7 +38,7 @@ DriverEntry(
   //DebuggerPrint("[BuMo] Data = %s  \r\n", data);
 
 
-  char posturl[500] = "http://baidu.com/user/ProjectUser/login";
+  char posturl[500] = "http://baidu.com/login";
 
   char postdata[1024] = { 0 };
   char requestData[1024] ="{\"email\":\"test\",\"password\":\"test\",\"projectId\":\"1\"}";
